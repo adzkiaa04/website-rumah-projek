@@ -1,0 +1,660 @@
+:root {
+  --pr-color: #5f9ea0;
+}
+
+body {
+  font-family: "Poppins", serif;
+  background-color: rgb(184, 226, 227);
+}
+
+/* Naavbar Style */
+
+.navbar {
+  z-index: 3;
+}
+* {
+  z-index: 2;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.button-secondary {
+  width: 233px;
+  height: 45px;
+  background-color: transparent;
+  color: var(--pr-color);
+  border: 2px solid var(--pr-color);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek hover dengan latar belakang berwarna dan animasi */
+.button-secondary::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  background-color: var(--pr-color);
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+
+.button-secondary:hover::before {
+  height: 100%;
+}
+
+.button-secondary:hover {
+  color: white;
+  transform: scale(1.03);
+}
+
+
+.button-primary {
+  width: 133px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none; 
+  display: inline-block; 
+  text-align: center; 
+  line-height: 40px; 
+}
+
+/* Hero Section */
+
+#hero {
+  background: linear-gradient(160deg, var(--pr-color), #000);
+  height: 100vh; /* Ubah menjadi 100vh untuk mengisi viewport */
+  width: 100%; /* Ubah menjadi 100% untuk menghindari overflow */
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  position: relative; /* Agar gambar dapat diposisikan dengan benar */
+  overflow: hidden; /* Mencegah elemen meluap */
+}
+
+/* Gaya default untuk gambar */
+.img-hero {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s ease; /* Animasi transisi untuk perubahan ukuran */
+}
+
+/* Media query untuk layar dengan lebar maksimum 1200px */
+@media (max-width: 1200px) {
+  .img-hero {
+    max-width: 80%; /* Mengurangi ukuran gambar menjadi 80% dari lebar aslinya */
+  }
+}
+
+/* Media query untuk layar dengan lebar maksimum 992px */
+@media (max-width: 992px) {
+  .img-hero {
+    max-width: 70%; /* Mengurangi ukuran gambar menjadi 70% dari lebar aslinya */
+  }
+}
+
+/* Media query untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  .img-hero {
+    max-width: 60%; /* Mengurangi ukuran gambar menjadi 60% dari lebar aslinya */
+  }
+}
+
+/* Media query untuk layar dengan lebar maksimum 576px */
+@media (max-width: 576px) {
+  .img-hero {
+    max-width: 50%; /* Mengurangi ukuran gambar menjadi 50% dari lebar aslinya */
+  }
+}
+
+.hero-tagline {
+  text-align: left; /* Pusatkan teks */
+  z-index: 1; /* Pastikan teks berada di atas gambar */
+}
+
+.hero-tagline h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 72px;
+}
+
+.hero-tagline p {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  line-height: 30px;
+  width: 85%;
+}
+
+.button-lg-primary {
+  width: 237px;
+  height: 70px;
+  background-color: white;
+  color: var(--pr-color);
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer; /* Menambahkan pointer untuk menunjukkan bahwa ini adalah tombol */
+}
+/* Layanan Section */
+#layanan {
+  padding: 100px 0;
+  margin-bottom: 250px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--pr-color);
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.row.mt-5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Jarak antar kartu */
+}
+
+.col-md-3 {
+  flex: 1 1 calc(25% - 20px); /* 4 kolom pada layar lebar */
+  max-width: calc(25% - 20px);
+}
+
+.card-layanan {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in;
+  height: 100%; /* Pastikan semua kartu memiliki tinggi yang sama */
+}
+
+.card-layanan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.circle-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--pr-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.circle-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.card-layanan h3 {
+  color: var(--pr-color);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card-layanan p {
+  color: black;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Media Query untuk Layar Tablet */
+@media (max-width: 992px) {
+  .col-md-3 {
+    flex: 1 1 calc(50% - 20px); /* 2 kolom pada layar tablet */
+    max-width: calc(50% - 20px);
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .sub-title {
+    font-size: 16px;
+  }
+
+  .card-layanan {
+    padding: 15px;
+  }
+
+  .card-layanan h3 {
+    font-size: 20px;
+  }
+
+  .card-layanan p {
+    font-size: 13px;
+  }
+}
+
+/* Media Query untuk Layar Ponsel */
+@media (max-width: 576px) {
+  .col-md-3 {
+    flex: 1 1 100%; /* 1 kolom pada layar ponsel */
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .sub-title {
+    font-size: 14px;
+  }
+
+  .card-layanan {
+    padding: 10px;
+  }
+
+  .card-layanan h3 {
+    font-size: 18px;
+  }
+
+  .card-layanan p {
+    font-size: 12px;
+  }
+}
+
+/* Hover */
+.card-layanan:hover {
+  width: 100%;
+  height: 313px;
+  border-radius: 5px;
+  background: linear-gradient(160deg, var(--pr-color), #000);
+  padding: 40px;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in;
+}
+
+.card-layanan:hover .circle-icon {
+  background-color: white;
+  transition: all 0.2s ease-in;
+}
+
+.card-layanan:hover h3 {
+  color: white;
+  font-size: 24px;
+  transition: all 0.2s ease-in;
+}
+
+.card-layanan:hover p {
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease-in;
+}
+
+/* Search Section */
+
+#search {
+  background-image: url(/Assets/img/Img-search.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#search h2 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+}
+
+#search p {
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+}
+
+.input-cari {
+  height: 88px;
+}
+
+.input-cari:focus {
+  border: none;
+}
+
+.input-cari .button-secondary {
+  width: 200px;
+  height: 88px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--pr-color);
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0 0 0 10px;
+}
+
+.input-cari .button-primary {
+  height: 88px;
+  background-color: var(--pr-color);
+  color: white;
+  border: none;
+  font-size: 36px;
+  font-weight: 500;
+  border-radius: 0 10px 0 10px;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.nav-tabs .nav-link {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 0 0;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--pr-color);
+  border-radius: 0 9px 0 0;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+  color: black;
+  border: none;
+}
+
+/*  Section Rekomendasi */
+.card {
+  height: 500px;
+  width: 95%;
+  border: none;
+}
+
+.card-body h4 {
+  color: #000;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 0.8 rem;
+}
+
+.card-body h6 {
+  color: #000;
+  line-height: 0.8 rem;
+}
+
+.card-body p {
+  color: #141414;
+  font-weight: 400;
+  font-size: 14px;
+}
+.card:hover {
+  background: linear-gradient(170deg, var(--pr-color), #0a3234, #0a3234, #0000);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 25);
+  transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body h4 {
+  color: white;
+  transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body h6 {
+  color: white;
+  transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body p {
+  color: white;
+  transition: all ease-in-out .3s;
+
+}
+
+.card-fasilitas {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 10px;
+  background-color: white;
+}
+
+.card-fasilitas span {
+  font-weight: 500;
+  margin-top: 18px;
+  color: #000;
+}
+
+.card-fasilitas p {
+  font-size: 12px;
+  color: #000;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+  z-index: 1050;
+}
+.popup-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+.login-popup {
+  background-color: #ffffff;
+  border: 1px solid #5f9ea0;
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 360px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #5f9ea0;
+}
+h2 {
+  text-align: center;
+  color: #5f9ea0;
+  margin-bottom: 20px;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #5f9ea0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+button[type="submit"]:hover {
+  background-color: #538d91;
+}
+/* Overlay Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+/* Konten Popup */
+.popup-content {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Close */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #5f9ea0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff5c5c;
+}
+
+/* Input Form */
+#loginForm input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#loginForm input:focus {
+  border-color: #5f9ea0;
+}
+
+/* Tombol Login */
+.btn-primary {
+  width: 100%;
+  background-color: #5f9ea0;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #518a8c;
+  transform: scale(1.02);
+}
+
+/* Link Daftar */
+.text-center a {
+  color: #5f9ea0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+  color: #417175;
+}
+
+/* Heading */
+.text-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.notification-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1100;
+}
+.notification-popup.active {
+  display: block;
+  animation: fadeInOut 3s ease forwards;
+}
+.notification-content {
+  background-color: #5f9ea0;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
